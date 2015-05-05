@@ -61,7 +61,8 @@ Use `paper-input-decorator` if you would like to implement validation.
   </style>
 
   <paper-input-decorator id="decorator" label="{{label}}" floatingLabel="{{floatingLabel}}" value="{{value}}" disabled?="{{disabled}}">
-    <input is="core-input" id="input" value="{{value}}" committedValue="{{committedValue}}" on-change="{{changeAction}}" disabled?="{{disabled}}">
+    <input is="core-input" id="input" value="{{value}}" type="{{type}}" committedValue="{{committedValue}}" on-change="{{changeAction}}" disabled?="{{disabled}}"
+    on-blur="{{onBlur}}" on-focus="{{onFocus}}" on-keyup="{{onKeyup}}" maxlength="{{maxlength}}">
   </paper-input-decorator>
 
 </template>
@@ -116,7 +117,25 @@ Use `paper-input-decorator` if you would like to implement validation.
        * @type String
        * @default ''
        */
-      committedValue: ''
+      committedValue: '',
+
+       /**
+       * The type used for the input.
+       *
+       * @attribute type
+       * @type String
+       * @default 'text'
+       */
+      type: 'text',
+
+      /**
+       * Allow set input maxlength
+       *
+       * @attribute maxlength
+       * @type Number
+       * @default 'undefined'
+       */
+      maxlength : undefined
 
     },
 
